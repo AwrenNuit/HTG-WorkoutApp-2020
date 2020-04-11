@@ -1,7 +1,7 @@
-# Workouts
+# HTG-WorkoutApp-2020
 
 ## Description
-Hack the Gap project focusing on at-home exercise.
+Hack the Gap Project - April 2020. Workout app for quarantine 
 
 ## To Run
 - `npm install` from command line to install dependencies
