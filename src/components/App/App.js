@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
+import Login from '../Login/Login';
+import Signup from '../Signup/Signup';
 
 function App() {
   return (
     <>
-      <p>This app R O C K S!~</p>
+      <Login />
+      <Signup />
     </>
   );
 }
