@@ -49,7 +49,7 @@ render(){
   
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Login />
       <Signup />
       <Home />
