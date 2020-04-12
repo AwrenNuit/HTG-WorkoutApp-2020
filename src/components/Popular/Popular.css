@@ -1,0 +1,26 @@
+.popular-flex-container {
+  display: flex;
+  width: 800px;
+  height: 100px;
+  margin: 20px auto;
+}
+
+.popular-main-container {
+  background-color: #14213D;
+  padding: 40px;
+  height: 500px;
+}
+
+.popular-main-container h1 {
+  text-align: center;
+  color: white;
+}
+
+.popular-video {
+  margin: 30px 30px 0;
+}
+
+.popular-video h3 {
+  color: white;
+  margin-bottom: 10px;
+}
