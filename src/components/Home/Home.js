@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Home.css';
 import Popular from '../Popular/Popular';
+import SearchBar from '../SearchPage/SearchPage';
 
 export default function Home() {
   const [duration, setDuration] = useState('');
@@ -159,7 +160,7 @@ export default function Home() {
         </div>
       </div>
 
-      {searchActive ? <></>: <Popular />}
+      {searchActive ? <SearchBar /> : <Popular />}
     </>
   );
 }
