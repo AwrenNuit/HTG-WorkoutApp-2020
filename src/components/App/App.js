@@ -53,5 +53,4 @@ render(){
   )};
 
   }
-// ReactDOM.render( < App / > , document.querySelector('.container'));
 export default App
