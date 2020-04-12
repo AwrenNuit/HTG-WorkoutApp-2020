@@ -5,11 +5,6 @@ export default function Home() {
   const [duration, setDuration] = useState('');
   const [workout, setWorkout] = useState('');
   const [equipment, setEquipment] = useState([]);
-  
-  const handleClick = () => {
-    setEquipment(equipment => [...equipment, equipment])
-    // setEquipment(equipment => equipment.concat(equipment))
-  }
 
   return(
     <>
@@ -65,78 +60,78 @@ export default function Home() {
 
           <div className="checkbox-flex-container">
             <div className="checkbox-div">
-              <label onClick={e => handleClick(e.target.value)}>
+              <label onClick={e => e.target.checked ? setEquipment([...equipment, e.target.value]) : setEquipment(equipment.filter(item => item !== e.target.value))}>
                 <input className="checkbox-input" type="checkbox" value="kettlebell"/>
                 Kettlebell
               </label>
               <br />  
               <br />
-              <label onClick={e => setEquipment(e.target.value)}>
+              <label onClick={e => e.target.checked ? setEquipment([...equipment, e.target.value]) : setEquipment(equipment.filter(item => item !== e.target.value))}>
                 <input className="checkbox-input" type="checkbox" value="yoga block"/>
                 Yoga Block
               </label>
             </div>
 
             <div className="checkbox-div">
-              <label onClick={e => setEquipment(...equipment, e.target.value)}>
+              <label onClick={e => e.target.checked ? setEquipment([...equipment, e.target.value]) : setEquipment(equipment.filter(item => item !== e.target.value))}>
                 <input className="checkbox-input" type="checkbox" value="dumbbells" />
                 Dumbbells 
               </label>
               <br />
               <br />
-              <label onClick={e => setEquipment(e.target.value)}>
+              <label onClick={e => e.target.checked ? setEquipment([...equipment, e.target.value]) : setEquipment(equipment.filter(item => item !== e.target.value))}>
                 <input className="checkbox-input" type="checkbox" value="treadmill" />
                 Treadmill
               </label>
             </div>
 
             <div className="checkbox-div">
-              <label onClick={e => setEquipment(e.target.value)}>
+              <label onClick={e => e.target.checked ? setEquipment([...equipment, e.target.value]) : setEquipment(equipment.filter(item => item !== e.target.value))}>
                 <input className="checkbox-input" type="checkbox" value="resistance bands"/>
                 Resistance Bands
               </label>
               <br />      
               <br />
-              <label onClick={e => setEquipment(e.target.value)}>
+              <label onClick={e => e.target.checked ? setEquipment([...equipment, e.target.value]) : setEquipment(equipment.filter(item => item !== e.target.value))}>
                 <input className="checkbox-input" type="checkbox" value="TRX" />
                 TRX Strap
               </label>
             </div>
 
             <div className="checkbox-div">
-              <label onClick={e => setEquipment(e.target.value)}>
+              <label onClick={e => e.target.checked ? setEquipment([...equipment, e.target.value]) : setEquipment(equipment.filter(item => item !== e.target.value))}>
                 <input className="checkbox-input" type="checkbox" value="medicine ball"/>
                 Medicine Ball
               </label>
               <br />      
               <br />
-              <label onClick={e => setEquipment(e.target.value)}>
+              <label onClick={e => e.target.checked ? setEquipment([...equipment, e.target.value]) : setEquipment(equipment.filter(item => item !== e.target.value))}>
                 <input className="checkbox-input" type="checkbox" value="physio ball" />
                 Physio Ball
               </label>
             </div>
 
             <div className="checkbox-div">
-              <label onClick={e => setEquipment(e.target.value)}>
+              <label onClick={e => e.target.checked ? setEquipment([...equipment, e.target.value]) : setEquipment(equipment.filter(item => item !== e.target.value))}>
                 <input className="checkbox-input" type="checkbox" value="bosu ball"/>
                 Bosu Ball
               </label>
               <br />      
               <br />
-              <label onClick={e => setEquipment(e.target.value)}> 
+              <label onClick={e => e.target.checked ? setEquipment([...equipment, e.target.value]) : setEquipment(equipment.filter(item => item !== e.target.value))}>
                 <input className="checkbox-input" type="checkbox" value="ab roller" />
                 Ab Roller
               </label>
             </div>
 
             <div className="checkbox-div">
-              <label onClick={e => setEquipment(e.target.value)}>
+              <label onClick={e => e.target.checked ? setEquipment([...equipment, e.target.value]) : setEquipment(equipment.filter(item => item !== e.target.value))}>
                 <input className="checkbox-input" type="checkbox" value="bicycle"/>
                 Bicycle
               </label>
               <br />      
               <br />
-              <label onClick={e => setEquipment(e.target.value)}>
+              <label onClick={e => e.target.checked ? setEquipment([...equipment, e.target.value]) : setEquipment(equipment.filter(item => item !== e.target.value))}>
                 <input className="checkbox-input" type="checkbox" value="jump rope" />
                 Jump Rope
               </label>
