@@ -17,22 +17,16 @@ import Footer from '../Footer/Footer';
 const API_KEY = 'AIzaSyAUUYCLuVeftvtrC10I9wysEFpnOybvzdU';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
+    state = {
       videos: [],
-      selectedVideo: null
-    };
+      selectedVideo: null,
+      videoSearch: 'Yoga With Adrianne'
+    }
 
-    this.videoSearch('Yoga With Adrianne');
-  }
-
-  functionThreeThousand(duration){
+  functionThreeThousand = (duration) => {
     this.setState({
       duration: duration
-    })
-    console.log('Duration: ', duration)
+    });
   }
 
   videoSearch(term) {
@@ -59,6 +53,7 @@ render(){
       <Header />
       <Login />
       <Signup />
+      {JSON.stringify(this.state.duration)}
       <Home functionThreeThousand={this.functionThreeThousand}/>
       <br />
       <br />
