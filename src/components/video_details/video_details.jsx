@@ -1,21 +1,39 @@
 import React from 'react';
 
+
+
+
+///////////// I may have messed this up for the search results page /////////////
+
+
+
+
 const VideoDetail = ({ video }) => {
+    let url = '';
+    let snippet = '';
+
     if (!video) {
         return <div>Loading...</div>;
     }
 
+    else if(video.id === undefined){    
+        url = `https://www.youtube.com/embed/${video}`;
+    }
+    else {
+        const videoId = video.id.videoId;
 
-    const videoId = video.id.videoId;
-    const url = `https://www.youtube.com/embed/${videoId}`;
-
+        snippet = video.snippet.title;
+    
+        url = `https://www.youtube.com/embed/${videoId}`;
+    }
+    
     return (
         <div className="video-detail col-md-8">
             <div className="embed-responsive embed-responsive-16by9">
                 <iframe className="embed-responsive-item" src={url}></iframe>
             </div>
             <div className="details">
-                <div>{video.snippet.title}</div>
+                <div>{snippet}</div>
             </div>
         </div>
     );
