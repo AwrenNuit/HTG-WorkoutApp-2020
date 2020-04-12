@@ -1,5 +1,5 @@
 /* BASE: the starting point */
-/* html, body, div, span, .header-heading, h2, h3, h4, h5, h6,
+/*html, body, div, span, .header-heading, h2, h3, h4, h5, h6,
 p, a, address, img, ul, li, footer, header {
   margin: 0;
   padding: 0;
@@ -22,20 +22,20 @@ header, nav {
   list-style: none; }
 
 /* img {
-  max-width: 100%; } */
+  max-width: 100%; }
 
-/* html {
-  box-sizing: border-box; } */
+html {
+  box-sizing: border-box; } 
 
-/* *, *:before, *:after {
-  box-sizing: inherit; } */
+ *, *:before, *:after {
+  box-sizing: inherit; }
 
 
-/* html, body {
+ html, body {
   height: 100%; 
-} */
+} 
 
-/* html {
+ html {
   font: 1rem helvetica, sans-serif;
   letter-spacing: 0.01rem; 
 } */
@@ -65,7 +65,7 @@ header, nav {
 
 .nav-grid {
   display: inline-grid;
-  grid-template-columns: auto auto; 
+  grid-template-columns: auto auto auto; 
 }
 
 .nav-grid input, .nav-grid label {
@@ -98,10 +98,14 @@ header, nav {
   padding: 0 2rem; 
 }
 
-.nav-box #nav-links, .nav-box .fa-bars {
-  margin-top: 0.25rem; 
+.nav-box #nav-links {
+  margin-top: 1.25rem; 
 }
 
+.logo-name, .logo-icon {
+  padding-top: 0.5rem;
+
+}
 .nav-color {
   background-color: #fff;
   color: #000; 
@@ -132,13 +136,19 @@ header, nav {
 .account {
   display: flex;
   margin-right: 70px;
+  margin-top: 0.25rem;
 }
 
 .user {
+  height: 10px;
+  width: 10px;
   margin-right: 5px;
 }
 
 .chevron {
+  display: none;
+  height: 10px;
+  width: 10px;
   margin-left: 5px;
 }
 
@@ -153,17 +163,30 @@ header, nav {
 
   .nav-box li {
     padding: 0;
-    margin-top: 1rem; 
+    margin-top: 3rem;
+    margin-right: 2.5rem; 
   }
 
-  .nav-grid label, .nav-grid li, .nav-grid #nav-toggle:checked + #nav-links {
-    cursor: pointer;
-    display: grid;
-    justify-content: end; 
+  .nav-box li:last-child {
+    padding: 0;
+    margin-top: 0.5rem;
+    margin-right: 2.5rem; 
   }
 
-  .nav-grid #nav-links, .nav-grid #nav-toggle {
-    display: none; 
+  .account {
+    display: flex;
+    margin-right: 0;
+    padding-right: 0;
+  }
+  .user {
+    height: 20px;
+    width: 20px;
+  }
+  .chevron {
+    display: none;
+  }
+  .my-account {
+    display: none;
   }
 }
 
