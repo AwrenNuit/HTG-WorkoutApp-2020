@@ -40,31 +40,31 @@ class App extends Component {
   }
 
 
-render(){
-  const videoSearch = _.debounce(term => {
-    this.videoSearch(term);
-  }, 300);
-  
-  return (
-    <>
-      
+  render() {
+    const videoSearch = _.debounce(term => {
+      this.videoSearch(term);
+    }, 300);
+
+
+    return (
+      <>
         <h5>Youtube Search:</h5><SearchBar onSearchTermChange={videoSearch} />
-      <VideoDetail video={this.state.selectedVideo} />
-      <VideoList
+        <VideoDetail video={this.state.selectedVideo} />
+        <VideoList
           onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
           videos={this.state.videos}
         />
-      <p>This app R O C K S!~</p>
-      <br>
-      <Header />
-      <Login />
-      <Signup />
-      <Home />
-      <Footer />
+        <br />
+        <br />
+        <br />
+        <Header />
+        <Login />
+        <Signup />
+        <Home />
+        <Footer />
+      </>
+    );
+  };
+}
 
-    </>
-  )};
-
-  }
-// ReactDOM.render( < App / > , document.querySelector('.container'));
-export default App
+export default App;
