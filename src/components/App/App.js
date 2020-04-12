@@ -1,11 +1,10 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 
 import YTSearch from 'youtube-api-search';
-import ReactDOM from 'react-dom';
 import SearchBar from '../SearchPage/SearchPage'
-import { render } from '@testing-library/react';
 import VideoDetail from '../video_details/video_details.jsx'
 import VideoList from '../video_list/video_list.jsx'
 import Home from '../Home/Home';
@@ -13,7 +12,7 @@ import Login from '../Login/Login';
 import Signup from '../Signup/Signup';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-
+import Account from '../Account/Account';
 
 const API_KEY = 'AIzaSyAUUYCLuVeftvtrC10I9wysEFpnOybvzdU';
 
@@ -48,11 +47,12 @@ render(){
   }, 300);
   
   return (
-    <>
+    <Router>
       <Header />
-      <Login />
-      <Signup />
-      <Home />
+      <Route path='/login' component={Login} />
+      <Route path='/signup' component={Signup} />
+      <Route exact path='/' component={Home} />
+      <Route path='/account' component={Account} />
       <br />
       <br />
       <br />
@@ -66,7 +66,7 @@ render(){
       
       <Footer />
 
-    </>
+    </Router>
   )};
 
   }
