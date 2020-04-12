@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
 import './Home.css';
-import VideoDetail from '../video_details/video_details';
 import Popular from '../Popular/Popular';
 
 export default function Home() {
   const [duration, setDuration] = useState('');
   const [workout, setWorkout] = useState('');
   const [equipment, setEquipment] = useState([]);
+  const [searchActive, setSearchActive] = useState(false);
+
+  const handleSearch = () => {
+    setSearchActive(true);
+  }
 
   return(
     <>
       <div className="checkbox-main-container">
         <h1>Let's Get Moving! &#9829;</h1>
-        {JSON.stringify(workout)}
-        {JSON.stringify(duration)}
-        {JSON.stringify(equipment)}
-     
-
 
         <section>
           <div className="checkbox-select-container">
@@ -156,11 +155,11 @@ export default function Home() {
         </section>
 
         <div>
-          <button className="checkbox-btn">Search</button>
+          <button className="checkbox-btn" onClick={handleSearch}>Search</button>
         </div>
       </div>
 
-      <Popular />
+      {searchActive ? <></>: <Popular />}
     </>
   );
 }
