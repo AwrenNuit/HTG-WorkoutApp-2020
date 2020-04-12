@@ -1,5 +1,6 @@
 import React from 'react';
 import VideoDetail from '../video_details/video_details';
+import './Popular.css';
 
 export default function Popular() {
 
