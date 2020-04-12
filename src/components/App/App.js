@@ -22,10 +22,21 @@ class App extends Component {
 
     this.state = {
       videos: [],
-      selectedVideo: null
+      selectedVideo: null,
+      duration: '',
+      workout: '',
+      equipment: []
     };
 
     this.videoSearch('Yoga With Adrianne');
+  }
+
+  sendSearchUp = (d, w, e) => {
+    this.setState({
+      duration: d,
+      workout: w,
+      equipment: e
+    });
   }
 
   videoSearch(term) {
