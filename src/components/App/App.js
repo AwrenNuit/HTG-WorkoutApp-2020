@@ -14,7 +14,6 @@ import Signup from '../Signup/Signup';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-const API_KEY = 'AIzaSyAUUYCLuVeftvtrC10I9wysEFpnOybvzdU';
 
 class App extends Component {
     state = {
