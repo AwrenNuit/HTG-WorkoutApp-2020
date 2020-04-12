@@ -2,10 +2,16 @@ import React, { useState } from 'react';
 import './Home.css';
 import VideoDetail from '../video_details/video_details';
 
-export default function Home() {
+export default function Home(props) {
+ 
+  
   const [duration, setDuration] = useState('');
   const [workout, setWorkout] = useState('');
   const [equipment, setEquipment] = useState([]);
+
+  function getThing(){
+    props.functionThreeThousand(duration, workout, equipment)
+  }
 
   return(
     <>
@@ -137,25 +143,11 @@ export default function Home() {
                 Jump Rope
               </label>
             </div>
-
-            {/* <div className="checkbox-div">
-              <label>
-                <input className="checkbox-input" type="checkbox" value="stairs"/>
-                Stairs 
-              </label>
-              <br />      
-              <br />
-              <label>
-                <input className="checkbox-input" type="checkbox" value="body weight" />
-                Body Weight
-              </label>
-            </div> */}
-
           </div>
         </section>
 
         <div>
-          <button className="checkbox-btn">Search</button>
+          <button className="checkbox-btn" onClick={getThing}>Search</button>
         </div>
       </div>
 

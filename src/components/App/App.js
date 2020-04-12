@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import React, { Component } from 'react';
+import React, { useState, Component } from 'react';
 import './App.css';
 
 import YTSearch from 'youtube-api-search';
@@ -13,7 +13,6 @@ import Login from '../Login/Login';
 import Signup from '../Signup/Signup';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-
 
 const API_KEY = 'AIzaSyAUUYCLuVeftvtrC10I9wysEFpnOybvzdU';
 
@@ -29,6 +28,13 @@ class App extends Component {
     this.videoSearch('Yoga With Adrianne');
   }
 
+  functionThreeThousand(duration){
+    this.setState({
+      duration: duration
+    })
+    console.log('Duration: ', duration)
+  }
+
   videoSearch(term) {
     YTSearch({
       key: API_KEY,
@@ -41,6 +47,7 @@ class App extends Component {
     });
   }
 
+  
 
 render(){
   const videoSearch = _.debounce(term => {
@@ -52,7 +59,7 @@ render(){
       <Header />
       <Login />
       <Signup />
-      <Home />
+      <Home functionThreeThousand={this.functionThreeThousand}/>
       <br />
       <br />
       <br />
