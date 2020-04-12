@@ -15,6 +15,8 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 
+const API_KEY = 'AIzaSyAUUYCLuVeftvtrC10I9wysEFpnOybvzdU';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -47,19 +49,19 @@ render(){
   
   return (
     <>
-      
-        <h5>Youtube Search:</h5><SearchBar onSearchTermChange={videoSearch} />
+      <Header />
+      <Login />
+      <Signup />
+      <Home />
+      <br></br>
+
+      <h5>Youtube Search:</h5><SearchBar onSearchTermChange={videoSearch} />
       <VideoDetail video={this.state.selectedVideo} />
       <VideoList
           onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
           videos={this.state.videos}
         />
-      <p>This app R O C K S!~</p>
-      <br>
-      <Header />
-      <Login />
-      <Signup />
-      <Home />
+      
       <Footer />
 
     </>
