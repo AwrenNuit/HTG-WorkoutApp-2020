@@ -159,8 +159,8 @@ export default function Home() {
           <button className="checkbox-btn" onClick={handleSearch}>Search</button>
         </div>
       </div>
-
-      {searchActive ? <SearchBar /> : <Popular />}
+      
+      {!searchActive ? <Popular /> : <SearchBar />}
     </>
   );
 }

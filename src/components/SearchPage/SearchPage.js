@@ -1,8 +1,7 @@
 import React, { Component } from 'react'; //Always need in JSX files
-import _ from 'lodash';
+import VideoList from '../video_list/video_list';
+import VideoDetail from '../video_details/video_details';
 import YTSearch from 'youtube-api-search';
-import VideoDetail from '../video_details/video_details.jsx';
-import VideoList from '../video_list/video_list.jsx';
 
 const API_KEY = 'AIzaSyAUUYCLuVeftvtrC10I9wysEFpnOybvzdU';
 
@@ -13,17 +12,25 @@ class SearchBar extends Component {
 
     this.state = {
       videos: [],
-      selectedVideo: null
+      selectedVideo: null,
+      term: ''
     };
 
     this.videoSearch('Yoga With Adrianne');
   }
 
-  videoSearch(term) {
+  onInputChange(term) {
+    this.setState({ term });
+    this.videoSearch(term);
+  }
+
+  videoSearch = (term) => {
+    console.log('term-------------', term);
     YTSearch({
       key: API_KEY,
       term: term
     }, videos => {
+      console.log('term-------------', term);
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
@@ -32,20 +39,23 @@ class SearchBar extends Component {
   }
 
 
-  render(){
-    const videoSearch = _.debounce(term => {
-      this.videoSearch(term);
-    }, 300);
+  render() {
 
     return (
       <>
-        {/* <h5>Youtube Search:</h5><SearchBar onSearchTermChange={videoSearch} />
+        <div className="search-bar" style={{margin: "20px", textAlign: "center", display:"none"}}>
+          <input
+            value={this.state.term}
+            onChange={event => this.onInputChange(event.target.value)}
+            style = {{ width: "75%" }}
+          />
+        </div>
+        
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList
             onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
             videos={this.state.videos}
-        /> */}
-        <p>hi!</p>
+        />
       </>
     );
   }

@@ -41,22 +41,33 @@ class App extends Component {
   }
 
 
-  render(){
-    const videoSearch = _.debounce(term => {
-      this.videoSearch(term);
-    }, 300);
+render(){
+  const videoSearch = _.debounce(term => {
+    this.videoSearch(term);
+  }, 300);
   
-    return (
-      <Router>
-        <Header />
-        <Route path='/login' component={Login} />
-        <Route path='/signup' component={Signup} />
-        <Route exact path='/' component={Home} />
-        <Route path='/account' component={Account} />
-        <Footer />
-      </Router>
-    )
-  };
-}
+  return (
+    <Router>
+      <Header />
+      <Route path='/login' component={Login} />
+      <Route path='/signup' component={Signup} />
+      <Route exact path='/' component={Home} />
+      <Route path='/account' component={Account} />
+      <br />
+      <br />
+      <br />
 
-export default App;
+      <h5>Youtube Search:</h5><SearchBar onSearchTermChange={videoSearch} />
+      <VideoDetail video={this.state.selectedVideo} />
+      <VideoList
+          onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
+          videos={this.state.videos}
+        />
+      
+      <Footer />
+
+    </Router>
+  )};
+
+  }
+export default App
