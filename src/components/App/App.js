@@ -15,6 +15,8 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 
+const API_KEY = 'AIzaSyAUUYCLuVeftvtrC10I9wysEFpnOybvzdU';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -40,31 +42,32 @@ class App extends Component {
   }
 
 
-  render() {
-    const videoSearch = _.debounce(term => {
-      this.videoSearch(term);
-    }, 300);
+render(){
+  const videoSearch = _.debounce(term => {
+    this.videoSearch(term);
+  }, 300);
+  
+  return (
+    <>
+      <Header />
+      <Login />
+      <Signup />
+      <Home />
+      <br />
+      <br />
+      <br />
 
-
-    return (
-      <>
-        <h5>Youtube Search:</h5><SearchBar onSearchTermChange={videoSearch} />
-        <VideoDetail video={this.state.selectedVideo} />
-        <VideoList
+      <h5>Youtube Search:</h5><SearchBar onSearchTermChange={videoSearch} />
+      <VideoDetail video={this.state.selectedVideo} />
+      <VideoList
           onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
           videos={this.state.videos}
         />
-        <br />
-        <br />
-        <br />
-        <Header />
-        <Login />
-        <Signup />
-        <Home />
-        <Footer />
-      </>
-    );
-  };
-}
+      
+      <Footer />
 
-export default App;
+    </>
+  )};
+
+  }
+export default App
