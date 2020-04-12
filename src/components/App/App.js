@@ -53,7 +53,9 @@ render(){
       <Login />
       <Signup />
       <Home />
-      <br></br>
+      <br />
+      <br />
+      <br />
 
       <h5>Youtube Search:</h5><SearchBar onSearchTermChange={videoSearch} />
       <VideoDetail video={this.state.selectedVideo} />
