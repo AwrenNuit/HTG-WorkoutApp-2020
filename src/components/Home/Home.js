@@ -9,10 +9,7 @@ export default function Home(props) {
   const [equipment, setEquipment] = useState([]);
   const [searchActive, setSearchActive] = useState(false);
 
-  const handleSearch = () => {
-    props.sendSearchUp(duration, workout, equipment);
-    setSearchActive(true);
-  }
+  const handleSearch = () => setSearchActive(true);
 
   return(
     <>
@@ -161,7 +158,7 @@ export default function Home(props) {
         </div>
       </div>
       
-      {!searchActive ? <Popular /> : <SearchBar />}
+      {!searchActive ? <Popular /> : <SearchBar duration={duration} workout={workout} equipment={equipment} />}
     </>
   );
 }

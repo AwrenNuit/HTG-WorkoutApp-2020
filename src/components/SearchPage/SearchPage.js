@@ -5,26 +5,19 @@ import YTSearch from 'youtube-api-search';
 
 const API_KEY = 'AIzaSyAUUYCLuVeftvtrC10I9wysEFpnOybvzdU';
 
-// Create the HTML to return for the input
 class SearchBar extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      videos: [],
-      selectedVideo: null,
-      term: ''
-    };
-
-    this.videoSearch('Yoga With Adrianne');
+  
+  state = {
+    videos: [],
+    selectedVideo: null
+  };
+  
+  componentDidMount() {
+    const query = `${this.props.workout} ${this.props.duration} ${this.props.equipment}`;
+    this.videoSearch(query);
   }
 
-  onInputChange(term) {
-    this.setState({ term });
-    this.videoSearch(term);
-  }
-
-  videoSearch = (term) => {
+  videoSearch = term => {
     console.log('term-------------', term);
     YTSearch({
       key: API_KEY,
@@ -38,19 +31,9 @@ class SearchBar extends Component {
     });
   }
 
-
   render() {
-
     return (
       <>
-        <div className="search-bar" style={{margin: "20px", textAlign: "center", display:"none"}}>
-          <input
-            value={this.state.term}
-            onChange={event => this.onInputChange(event.target.value)}
-            style = {{ width: "75%" }}
-          />
-        </div>
-        
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList
             onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
