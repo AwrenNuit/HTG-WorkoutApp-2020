@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../Login/Login.css';
 import { useHistory } from 'react-router-dom';
+import Logo from '../Header/homebody5.png';
 
 export default function Signup() {
 
@@ -14,6 +15,12 @@ export default function Signup() {
   
   return(
     <div className="login-container">
+      <img 
+        className="login-logo" 
+        src={Logo} 
+        alt="homebody logo" 
+        style={{width:"200px"}}
+      />
       <h1 className="login-heading">Signup</h1>
       <form onSubmit={signup}>
       <div className="login-input">
@@ -41,10 +48,10 @@ export default function Signup() {
           <button className="login-btn" type="submit">All Done!</button>
         </div>
       </form>
-      {/* <hr />
+      <hr />
       <div>
         <button className="login-signup-btn" onClick={() => history.push('/login')}>Back</button>
-      </div> */}
+      </div>
     </div>
   );
 }

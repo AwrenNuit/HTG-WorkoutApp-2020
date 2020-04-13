@@ -1,16 +1,17 @@
 import React from 'react';
+import './video_list_item.css';
 
 const VideoListItem = ({ video, onVideoSelect }) => {
-    //const video = props.video;
-    const imageUrl = video.snippet.thumbnails.default.url;
-
+    
+    const url = `https://www.youtube.com/embed/${video.id.videoId}`;
 
     return (
         <li onClick={() => onVideoSelect(video)} className="list-group-item">
             <div className="video-list media">
                 <div className="media-left">
-                    <img className="media-object" src={imageUrl} alt="youtube video placeholder" />
+                    <iframe src={url} title={video.snippet.title}></iframe>
                 </div>
+                <br />
                 <div className="media-body">
                     <div className="media-heading">{video.snippet.title}</div>
                     <div className="media-desc">{video.snippet.description}</div>

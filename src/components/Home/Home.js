@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Home.css';
+import Header from '../Header/Header';
 import Popular from '../Popular/Popular';
 import SearchBar from '../SearchPage/SearchPage';
 
@@ -13,6 +14,7 @@ export default function Home() {
 
   return(
     <>
+      <Header />
       <div className="checkbox-main-container">
         <h1>Let's Get Moving! &#9829;</h1>
 
