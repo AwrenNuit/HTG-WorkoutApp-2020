@@ -17,13 +17,13 @@ export default function Login() {
   return(
     <div className="login-container">
       <img 
-        className="login-heading" 
+        className="login-logo" 
         src={Logo} 
         alt="homebody logo" 
         style={{width:"200px"}}
         onClick={() => {setEmail('something@gmail.com'); setPassword('something cool')}}
       />
-      {/* <h1 className="login-heading">Login</h1> */}
+      <h1 className="login-heading">Login</h1>
       <form onSubmit={login}>
         <div className="login-input">
           <label>Email: </label>
@@ -41,7 +41,10 @@ export default function Login() {
       <div>
         <br />
         <br />
-        <p>Don't have a homebody account? Sign Up today. It's free!</p>
+        <p>
+          Don't have a homebody account? 
+          <br />
+          Sign Up today. It's free!</p>
         <button className="login-signup-btn" onClick={() => history.push('/signup')}>Sign Up</button>
       </div>
     </div>
