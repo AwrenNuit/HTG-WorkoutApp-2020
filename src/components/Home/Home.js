@@ -3,7 +3,7 @@ import './Home.css';
 import Popular from '../Popular/Popular';
 import SearchBar from '../SearchPage/SearchPage';
 
-export default function Home(props) {
+export default function Home() {
   const [duration, setDuration] = useState('');
   const [workout, setWorkout] = useState('');
   const [equipment, setEquipment] = useState([]);
