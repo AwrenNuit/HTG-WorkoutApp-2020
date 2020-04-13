@@ -41,10 +41,10 @@ export default function Signup() {
           <button className="login-btn" type="submit">All Done!</button>
         </div>
       </form>
-      {/* <hr />
+      <hr />
       <div>
         <button className="login-signup-btn" onClick={() => history.push('/login')}>Back</button>
-      </div> */}
+      </div>
     </div>
   );
 }
