@@ -92,6 +92,7 @@ html {
   transition: top 0.2s;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   padding: 0.75rem 2rem; 
+  z-index: 300;
 }
 
 .nav-box .logo, .nav-box li {
