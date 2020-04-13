@@ -4,9 +4,6 @@ import { BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 
 import YTSearch from 'youtube-api-search';
-import SearchBar from '../SearchPage/SearchPage'
-import VideoDetail from '../video_details/video_details.jsx'
-import VideoList from '../video_list/video_list.jsx'
 import Home from '../Home/Home';
 import Login from '../Login/Login';
 import Signup from '../Signup/Signup';
@@ -52,33 +49,16 @@ class App extends Component {
   }
 
 
-render(){
-  const videoSearch = _.debounce(term => {
-    this.videoSearch(term);
-  }, 300);
-  
-  return (
-    <Router>
-      <Header />
-      <Route path='/login' component={Login} />
-      <Route path='/signup' component={Signup} />
-      <Route exact path='/' component={Home} />
-      <Route path='/account' component={Account} />
-      <br />
-      <br />
-      <br />
-
-      <h5>Youtube Search:</h5><SearchBar onSearchTermChange={videoSearch} />
-      <VideoDetail video={this.state.selectedVideo} />
-      <VideoList
-          onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
-          videos={this.state.videos}
-        />
-      
-      <Footer />
-
-    </Router>
-  )};
-
-  }
+  render(){
+    return (
+      <Router>
+        <Header />
+        <Route path='/login' component={Login} />
+        <Route path='/signup' component={Signup} />
+        <Route exact path='/' component={() => <Home sendSearchUp={this.sendSearchUp} />} />
+        <Route path='/account' component={Account} />      
+      </Router>
+      );
+  };
+}
 export default App

@@ -3,13 +3,14 @@ import './Home.css';
 import Popular from '../Popular/Popular';
 import SearchBar from '../SearchPage/SearchPage';
 
-export default function Home() {
+export default function Home(props) {
   const [duration, setDuration] = useState('');
   const [workout, setWorkout] = useState('');
   const [equipment, setEquipment] = useState([]);
   const [searchActive, setSearchActive] = useState(false);
 
   const handleSearch = () => {
+    props.sendSearchUp(duration, workout, equipment);
     setSearchActive(true);
   }
 
@@ -28,7 +29,7 @@ export default function Home() {
                 <option value="cardio" >Cardio</option>
                 <option value="weight training">Weight Training</option>
                 <option value="yoga">Yoga</option>
-                <option value="HITT">HITT - High Intensity Interval Training</option>
+                <option value="HIIT">HIIT - High Intensity Interval Training</option>
                 <option value="strength training">Strength Training</option>
                 <option value="running">Running</option>
                 <option value="recovery">Recovery</option>
