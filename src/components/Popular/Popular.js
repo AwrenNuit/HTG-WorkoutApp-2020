@@ -8,7 +8,7 @@ export default function Popular() {
     <div className="popular-main-container">
       <h1>Popular Workouts</h1>
 
-      <div class="popular-flex-container">
+      <div className="popular-flex-container">
         <div>
           <div className="popular-video">
             <h3>Yoga</h3>
