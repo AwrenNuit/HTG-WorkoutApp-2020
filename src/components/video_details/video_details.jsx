@@ -9,6 +9,8 @@ import React from 'react';
 
 
 const VideoDetail = ({ video }) => {
+    console.log('video--------------', video);
+    
     let url = '';
     let snippet = '';
 

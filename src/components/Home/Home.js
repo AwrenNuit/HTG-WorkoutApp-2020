@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Home.css';
 import Popular from '../Popular/Popular';
+import SearchBar from '../SearchPage/SearchPage';
 
 export default function Home() {
   const [duration, setDuration] = useState('');
@@ -8,9 +9,7 @@ export default function Home() {
   const [equipment, setEquipment] = useState([]);
   const [searchActive, setSearchActive] = useState(false);
 
-  const handleSearch = () => {
-    setSearchActive(true);
-  }
+  const handleSearch = () => duration && workout && equipment ? setSearchActive(true) : '';
 
   return(
     <>
@@ -27,7 +26,7 @@ export default function Home() {
                 <option value="cardio" >Cardio</option>
                 <option value="weight training">Weight Training</option>
                 <option value="yoga">Yoga</option>
-                <option value="HITT">HITT - High Intensity Interval Training</option>
+                <option value="HIIT">HIIT - High Intensity Interval Training</option>
                 <option value="strength training">Strength Training</option>
                 <option value="running">Running</option>
                 <option value="recovery">Recovery</option>
@@ -158,8 +157,8 @@ export default function Home() {
           <button className="checkbox-btn" onClick={handleSearch}>Search</button>
         </div>
       </div>
-
-      {searchActive ? <></>: <Popular />}
+      
+      {!searchActive ? <Popular /> : <SearchBar duration={duration} workout={workout} equipment={equipment} />}
     </>
   );
 }
