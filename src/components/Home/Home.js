@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Home.css';
 import Popular from '../Popular/Popular';
+import SearchBar from '../SearchPage/SearchPage';
 
 export default function Home() {
   const [duration, setDuration] = useState('');
@@ -8,9 +9,7 @@ export default function Home() {
   const [equipment, setEquipment] = useState([]);
   const [searchActive, setSearchActive] = useState(false);
 
-  const handleSearch = () => {
-    setSearchActive(true);
-  }
+  const handleSearch = () => duration && workout && equipment ? setSearchActive(true) : '';
 
   return(
     <>
@@ -27,7 +26,7 @@ export default function Home() {
                 <option value="cardio" >Cardio</option>
                 <option value="weight training">Weight Training</option>
                 <option value="yoga">Yoga</option>
-                <option value="HITT">HITT - High Intensity Interval Training</option>
+                <option value="HIIT">HIIT - High Intensity Interval Training</option>
                 <option value="strength training">Strength Training</option>
                 <option value="running">Running</option>
                 <option value="recovery">Recovery</option>
@@ -71,6 +70,12 @@ export default function Home() {
                 <input className="checkbox-input" type="checkbox" value="yoga block"/>
                 Yoga Block
               </label>
+              <br />      
+              <br />
+              <label onClick={e => e.target.checked ? setEquipment([...equipment, e.target.value]) : setEquipment(equipment.filter(item => item !== e.target.value))}>
+                <input className="checkbox-input" type="checkbox" value="jump rope" />
+                Jump Rope
+              </label>
             </div>
 
             <div className="checkbox-div">
@@ -83,6 +88,12 @@ export default function Home() {
               <label onClick={e => e.target.checked ? setEquipment([...equipment, e.target.value]) : setEquipment(equipment.filter(item => item !== e.target.value))}>
                 <input className="checkbox-input" type="checkbox" value="treadmill" />
                 Treadmill
+              </label>
+              <br />
+              <br />
+              <label onClick={e => e.target.checked ? setEquipment([...equipment, e.target.value]) : setEquipment(equipment.filter(item => item !== e.target.value))}>
+                <input className="checkbox-input" type="checkbox" value="bicycle"/>
+                Bicycle
               </label>
             </div>
 
@@ -97,6 +108,12 @@ export default function Home() {
                 <input className="checkbox-input" type="checkbox" value="TRX" />
                 TRX Strap
               </label>
+              <br />      
+              <br />
+              <label onClick={e => e.target.checked ? setEquipment([...equipment, e.target.value]) : setEquipment(equipment.filter(item => item !== e.target.value))}>
+                <input className="checkbox-input" type="checkbox" value="ab roller" />
+                Ab Roller
+              </label>
             </div>
 
             <div className="checkbox-div">
@@ -110,31 +127,11 @@ export default function Home() {
                 <input className="checkbox-input" type="checkbox" value="physio ball" />
                 Physio Ball
               </label>
-            </div>
-
-            <div className="checkbox-div">
+              <br />
+              <br />
               <label onClick={e => e.target.checked ? setEquipment([...equipment, e.target.value]) : setEquipment(equipment.filter(item => item !== e.target.value))}>
                 <input className="checkbox-input" type="checkbox" value="bosu ball"/>
                 Bosu Ball
-              </label>
-              <br />      
-              <br />
-              <label onClick={e => e.target.checked ? setEquipment([...equipment, e.target.value]) : setEquipment(equipment.filter(item => item !== e.target.value))}>
-                <input className="checkbox-input" type="checkbox" value="ab roller" />
-                Ab Roller
-              </label>
-            </div>
-
-            <div className="checkbox-div">
-              <label onClick={e => e.target.checked ? setEquipment([...equipment, e.target.value]) : setEquipment(equipment.filter(item => item !== e.target.value))}>
-                <input className="checkbox-input" type="checkbox" value="bicycle"/>
-                Bicycle
-              </label>
-              <br />      
-              <br />
-              <label onClick={e => e.target.checked ? setEquipment([...equipment, e.target.value]) : setEquipment(equipment.filter(item => item !== e.target.value))}>
-                <input className="checkbox-input" type="checkbox" value="jump rope" />
-                Jump Rope
               </label>
             </div>
 
@@ -158,8 +155,8 @@ export default function Home() {
           <button className="checkbox-btn" onClick={handleSearch}>Search</button>
         </div>
       </div>
-
-      {searchActive ? <></>: <Popular />}
+      
+      {!searchActive ? <Popular /> : <SearchBar duration={duration} workout={workout} equipment={equipment} />}
     </>
   );
 }
