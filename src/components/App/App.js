@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 
 import Account from '../Account/Account';
-import Header from '../Header/Header';
 import Home from '../Home/Home';
 import Login from '../Login/Login';
 import Signup from '../Signup/Signup';
@@ -22,7 +21,6 @@ class App extends Component {
   render(){
     return (
       <Router>
-        <Header />
         <Route exact path='/' component={Home} />
         <Route path='/account' component={Account} />
         <Route path='/login' component={Login} />
