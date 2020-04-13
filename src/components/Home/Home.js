@@ -9,7 +9,7 @@ export default function Home(props) {
   const [equipment, setEquipment] = useState([]);
   const [searchActive, setSearchActive] = useState(false);
 
-  const handleSearch = () => setSearchActive(true);
+  const handleSearch = () => duration && workout && equipment ? setSearchActive(true) : '';
 
   return(
     <>
