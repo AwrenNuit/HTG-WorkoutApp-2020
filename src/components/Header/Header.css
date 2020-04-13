@@ -140,16 +140,9 @@ html {
 }
 
 .user {
-  height: 10px;
-  width: 10px;
+  height: 17px;
+  width: 17px;
   margin-right: 5px;
-}
-
-.chevron {
-  display: none;
-  height: 10px;
-  width: 10px;
-  margin-left: 5px;
 }
 
 @media screen and (max-width: 600px) {
@@ -179,8 +172,8 @@ html {
     padding-right: 0;
   }
   .user {
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
   }
   .chevron {
     display: none;
