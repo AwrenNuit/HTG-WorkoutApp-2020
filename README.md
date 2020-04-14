@@ -5,6 +5,22 @@ Hack the Gap Project - April 2020. Workout app for quarantine. Users can select 
 
 View the app [here](https://htg2020-homebody.web.app/).
 
+## Screenshots
+Homepage <br/>
+<img src=public/screenshots/homepage.png width="400" alt="Home Page"/>
+
+
+Search Results <br/>
+<img src=public/screenshots/search-results.png width="400" alt="Search Results"/>
+
+
+Account Page (Tracker) <br/>
+<img src=public/screenshots/tracker.png width="400" alt="Account Page Tracker"/>
+
+
+Account Page (Favorites) <br/>
+<img src=public/screenshots/favorites.png width="400" alt="Account Page Favorites"/>
+
 ## To Run
 - `npm install` from command line to install dependencies
 - `npm run client` opens window in browser

@@ -1,3 +1,9 @@
+.fav-container {
+  margin-top: 120px;
+  padding-right: 80px;
+  padding-left: 90px;
+}
+
 .profile-grid ol, ul {
   list-style: none; 
 }
