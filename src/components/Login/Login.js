@@ -21,7 +21,7 @@ export default function Login() {
         src={Logo} 
         alt="homebody logo" 
         style={{width:"200px"}}
-        onClick={() => {setEmail('something@gmail.com'); setPassword('something cool')}}
+        onClick={() => {setEmail('homebody@gmail.com'); setPassword('something cool')}}
       />
       <h1 className="login-heading">Login</h1>
       <form onSubmit={login}>
