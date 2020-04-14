@@ -7,7 +7,6 @@ import Home from '../Home/Home';
 import Login from '../Login/Login';
 import Signup from '../Signup/Signup';
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -16,7 +15,6 @@ class App extends Component {
       selectedVideo: null
     };
   }
-
 
   render(){
     return (

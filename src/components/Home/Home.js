@@ -136,20 +136,6 @@ export default function Home() {
                 Bosu Ball
               </label>
             </div>
-
-            {/* <div className="checkbox-div">
-              <label>
-                <input className="checkbox-input" type="checkbox" value="stairs"/>
-                Stairs 
-              </label>
-              <br />      
-              <br />
-              <label>
-                <input className="checkbox-input" type="checkbox" value="body weight" />
-                Body Weight
-              </label>
-            </div> */}
-
           </div>
         </section>
 
